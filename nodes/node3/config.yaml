@@ -1,0 +1,24 @@
+node:
+  id: node-3
+  port: 8003
+  bind_address: 0.0.0.0
+
+peers:
+  - id: node-1
+    address: 172.28.0.11:8001
+  - id: node-2
+    address: 172.28.0.12:8002
+
+tls:
+  enabled: true
+  cert_file: /etc/mpc/certs/node3.pem
+  key_file: /etc/mpc/certs/node3-key.pem
+
+database:
+  type: sqlite
+  path: /data/node3.db
+  encryption_password: dev-password-node3
+
+signing:
+  curve: secp256k1
+  scheme: ecdsa
