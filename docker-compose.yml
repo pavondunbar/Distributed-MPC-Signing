@@ -25,6 +25,7 @@ services:
     environment:
       - NODE_ID=node-1
       - COORDINATOR_URL=http://mpc-coordinator:9000
+      - FAIL_NODE=none
     ports:
       - "8001:8000"
     depends_on:
@@ -41,6 +42,7 @@ services:
     environment:
       - NODE_ID=node-2
       - COORDINATOR_URL=http://mpc-coordinator:9000
+      - FAIL_NODE=none
     ports:
       - "8002:8000"
     depends_on:
@@ -57,6 +59,7 @@ services:
     environment:
       - NODE_ID=node-3
       - COORDINATOR_URL=http://mpc-coordinator:9000
+      - FAIL_NODE=node-3   # 🔥 FAILURE INJECTION ENABLED HERE
     ports:
       - "8003:8000"
     depends_on:
